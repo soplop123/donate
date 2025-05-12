@@ -1,1 +1,53 @@
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержать проект</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .donate-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .donate-btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Поддержать проект</h1>
+    <p>Если вам нравится мой контент, вы можете отправить донат:</p>
+    
+    <!-- Кнопка для перехода к оплате -->
+    <button class="donate-btn" onclick="alert('Переведите любую сумму на карту 1234 5678 9012 3456')">
+        Донатить с карты
+    </button>
+    
+    <p>Или укажите сумму:</p>
+    <input type="number" id="amount" placeholder="Сумма в рублях" min="10">
+    <button class="donate-btn" onclick="donate()">Отправить</button>
+    
+    <script>
+        function donate() {
+            const amount = document.getElementById('amount').value;
+            if (!amount || amount < 10) {
+                alert("Минимальная сумма — 10 рублей");
+                return;
+            }
+            alert(`Переведите ${amount} рублей на карту 1234 5678 9012 3456`);
+        }
+    </script>
+</body>
+</html>
